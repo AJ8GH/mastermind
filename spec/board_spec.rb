@@ -9,7 +9,11 @@ module Mastermind
       end
 
       it 'has four objects in each row' do
-        expect@board.grid[0].length
+        expect(@board.grid[0].length).to eq 4
+      end
+
+      it 'consitists of cell objects' do
+        expect(@board.grid.all? { |row| row.all? { |cell| cell.class == Cell } }).to be true
       end
     end
   end
