@@ -1,10 +1,13 @@
-# module Mastermind
-#   describe Board do
-#     context '#initialize' do
-#       xit 'initializes with an empty grid by default' do
-#         board = Board.new
-#         expect(board.grid.map(&:color).all? { |cell| cell.empty? }).to be true
-#       end
-#     end
-#   end
-# end
+module Mastermind
+  describe Board do
+
+    context '#initialize' do
+      before(:all) @board = Board.new
+
+      it 'initializes with two rows' do
+        expect(@board.grid.size).to eq 2
+      end
+      
+    end
+  end
+end
