@@ -8,5 +8,11 @@ module Mastermind
         expect(@cell.color.empty?).to be true
       end
     end
+
+    context '#color' do
+      it 'returns the color value' do
+        expect(@cell.color).to eq ''
+      end
+    end
   end
 end
