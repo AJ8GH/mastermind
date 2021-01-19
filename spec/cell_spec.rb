@@ -13,6 +13,11 @@ module Mastermind
       it 'returns the color value' do
         expect(@cell.color).to eq ''
       end
+
+      it 'can set the color value' do
+        @cell.color = :blue
+        expect(@cell.color).to eq :blue
+      end
     end
   end
 end
