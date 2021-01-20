@@ -57,9 +57,16 @@ module Mastermind
     end
 
     context '#set_cell_color' do
-      it 'sets the color of an empty cell' do
+      it 'sets the color of an empty cell in the code row' do
         @board.set_cell_color(row: :code, number: 1, color: :black)
-        expect(@board.code).to eq ['', :black, '', '']
+        @board.set_cell_color(row: :code, number: 3, color: :red)
+        expect(@board.code).to eq ['', :black, '', :red]
+      end
+
+      it 'sets the color of an empty cell in the guess row' do
+        @board.set_cell_color(row: :guess, number: 2, color: :green)
+        @board.set_cell_color(row: :guess, number: 0, color: :yellow)
+        expect(@board.guess).to eq [:yellow, '', :green, '']
       end
     end
   end
