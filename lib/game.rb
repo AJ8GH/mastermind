@@ -48,7 +48,7 @@ module Mastermind
         puts "#{code_breaker}, make your prediction:"
         set_new_guess
         if win?
-          return "#{code_breaker} cracked the code in #{number} turns!"
+          puts "#{code_breaker} wins! They cracked the code in #{number + 1} turns!"; break
         else
           puts "#{board.guess}\nIncorrect!\nNumber of matches#{number_of_matches}"
         end

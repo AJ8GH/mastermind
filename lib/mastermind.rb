@@ -15,6 +15,8 @@ end
 
 def begin_new_game
   get_player_names
-  new_game = Game.new(@players)
+  new_game = Mastermind::Game.new(@players)
   new_game.play_game
 end
+
+begin_new_game
