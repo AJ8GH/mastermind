@@ -21,5 +21,14 @@ module Mastermind
         expect(Game.new(players).code_breaker).to eq 'Hikaru'
       end
     end
+
+    context '#win?' do
+      it 'returns true if guess matches code with no empties' do
+        game = Game.new(players)
+        allow(game.board).to receive(:code) { [:blue, :black, :red, :green] }
+        allow(game.board).to receive(:guess) { [:blue, :black, :red, :green] }
+        expect(game.win?).to be true
+      end
+    end
   end
 end
