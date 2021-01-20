@@ -6,5 +6,9 @@ module Mastermind
       @board = board
       @code_maker, @code_breaker = players.shuffle
     end
+
+    def win?
+      board.guess == board.code
+    end
   end
 end

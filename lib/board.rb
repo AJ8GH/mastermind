@@ -17,5 +17,9 @@ module Mastermind
     def guess
       grid[1].map(&:color)
     end
+
+    def any_empty?
+      code.any? { |color| color.empty? } && guess.any? { |color| color.empty? }
+    end
   end
 end

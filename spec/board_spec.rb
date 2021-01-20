@@ -36,5 +36,9 @@ module Mastermind
         expect(@board.guess).to eq ['', '', :yellow, '']
       end
     end
+
+    # context '#win' do
+    #   it 'returns true'
+    # end
   end
 end
