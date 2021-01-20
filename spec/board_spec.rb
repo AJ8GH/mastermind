@@ -1,6 +1,6 @@
 module Mastermind
   describe Board do
-    before(:all) { @board = Board.new }
+    before(:each) { @board = Board.new }
     let(:default_grid) { [['', '', '', ''], ['', '', '', '']] }
 
     context '#initialize' do
@@ -53,6 +53,13 @@ module Mastermind
         allow(@board).to receive(:code) { [:blue, :black, :red, :green] }
         allow(@board).to receive(:guess) { [:yellow, :black, :red, :green] }
         expect(@board.any_empty?).to be false
+      end
+    end
+
+    context '#set_cell_color' do
+      it 'sets the color of an empty cell' do
+        @board.set_cell_color(row: :code, number: 1, color: :black)
+        expect(@board.code).to eq ['', :black, '', '']
       end
     end
   end

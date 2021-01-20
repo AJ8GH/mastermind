@@ -24,8 +24,9 @@ module Mastermind
       guess.any? { |color| color.empty? }
     end
 
-    # def set_cell_color
-    #   grid
-    # end
+    def set_cell_color(args = {})
+      row, number, color = args[:row], args[:number], args[:color]
+      grid[row][number].color = color
+    end
   end
 end
