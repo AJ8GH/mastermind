@@ -13,7 +13,12 @@ module Mastermind
     end
 
     def code_mapper
-      rows = { code: grid[0], guess: grid[1] }
+      color_grid = color_mapper
+      rows = { code: color_grid[0], guess: color_grid[1] }
+    end
+
+    def color_mapper
+      self.grid.map { |row| row.map(&:color) }
     end
   end
 end

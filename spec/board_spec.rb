@@ -1,6 +1,7 @@
 module Mastermind
   describe Board do
     before(:all) { @board = Board.new }
+    let(:default_grid) { [['', '', '', ''], ['', '', '', '']] }
 
     context '#initialize' do
       it 'initializes with two rows' do
@@ -30,6 +31,12 @@ module Mastermind
 
       it 'creates a hash with array rows as value' do
         expect(@board.code_mapper[:code].class).to eq Array
+      end
+    end
+
+    context '#color_mapper' do
+      it 'maps the cell colors onto an array' do
+        expect(@board.color_mapper).to eq default_grid
       end
 
     end
