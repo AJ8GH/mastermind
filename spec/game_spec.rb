@@ -59,5 +59,15 @@ module Mastermind
         expect(@game.number_of_matches).to eq 0
       end
     end
+
+    context '#show_colors' do
+      let (:expected) { ["* blue", "* red", "* black", "* yellow", "* green",
+                         "* orange"].map(&:centralize).join("\n") + "\n" + ('-' * 80) + "\n" +
+                         "Choose 4 colours:".center(80) + "\n" + ('-' * 80) + "\n" }
+
+      it 'shows the colors and prompts player to choose 4' do
+        expect { Game.new(players).show_colors }.to output(expected).to_stdout
+      end
+    end
   end
 end

@@ -20,8 +20,8 @@ module Mastermind
     end
 
     def show_colors
-      ["* blue", "* red", "* black",
-       "* yellow", "* green", "* orange"].map(&:centralize)
+      puts ["* blue", "* red", "* black", "* yellow", "* green", "* orange"].map(&:centralize)
+      "Choose 4 colours:".under_over_line
     end
 
     def get_color
@@ -38,7 +38,6 @@ module Mastermind
 
     def set_new_code
       puts show_colors
-      "Choose 4 colours:".under_over_line
       4.times do |number|
         get_color
         board.set_cell_color(row: :code, number: number, color: @color)
