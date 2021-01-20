@@ -9,9 +9,9 @@
 ![Mastermind board game](https://i.ebayimg.com/images/g/MNkAAOSwbwlW~qpJ/s-l1600.jpg)
 
 ## Objectives of this project
-- Build a fully functional command line with Ruby
+- Build a fully functional command line game with Ruby
 - Implement thorough unit testing using test driven development
-- Ensure the app is easy to maintain and change in the future, by applying core principles of object oriented design
+- Ensure the app is easily maintainable by applying core principles of object oriented design
 
 ## How to play
 
