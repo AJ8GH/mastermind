@@ -23,11 +23,19 @@ module Mastermind
     end
 
     context '#win?' do
+      before(:each) { @game = Game.new(players) }
+
       it 'returns true if guess matches code with no empties' do
-        game = Game.new(players)
-        allow(game.board).to receive(:code) { [:blue, :black, :red, :green] }
-        allow(game.board).to receive(:guess) { [:blue, :black, :red, :green] }
-        expect(game.win?).to be true
+
+        allow(@game.board).to receive(:code) { [:blue, :black, :red, :green] }
+        allow(@game.board).to receive(:guess) { [:blue, :black, :red, :green] }
+        expect(@game.win?).to be true
+      end
+
+      it 'returns false if guess does not match code' do
+        allow(@game.board).to receive(:code) { [:red, :red, :red, :green] }
+        allow(@game.board).to receive(:guess) { [:blue, :red, :red, :green] }
+        expect(@game.win?).to be false
       end
     end
   end
