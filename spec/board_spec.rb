@@ -22,5 +22,16 @@ module Mastermind
                                                                   ['', '', '', '']]
       end
     end
+
+    context '#code_mapper' do
+      it 'creates a hash' do
+        expect(@board.code_mapper.class).to eq Hash
+      end
+
+      it 'creates a hash with array rows as value' do
+        expect(@board.code_mapper[:code].class).to eq Array
+      end
+
+    end
   end
 end

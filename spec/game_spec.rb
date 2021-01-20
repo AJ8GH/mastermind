@@ -7,7 +7,7 @@ module Mastermind
         expect { Game.new(players) }.to_not raise_error
       end
 
-      it 'creates a new game with a board' do
+      it 'creates a new game with a new board by default' do
         expect(Game.new(players).board.class).to eq Board
       end
 
