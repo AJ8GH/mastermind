@@ -58,6 +58,12 @@ module Mastermind
         allow(@game.board).to receive(:guess) { [:red, :black, :red, :yellow] }
         expect(@game.number_of_matches).to eq 2
       end
+
+      it 'counts 0 when there are no matches' do
+        allow(@game.board).to receive(:code) { [:yellow, :yellow, :black, :blue] }
+        allow(@game.board).to receive(:guess) { [:blue, :black, :red, :yellow] }
+        expect(@game.number_of_matches).to eq 0
+      end
     end
   end
 end
