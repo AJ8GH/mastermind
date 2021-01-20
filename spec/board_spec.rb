@@ -37,8 +37,10 @@ module Mastermind
       end
     end
 
-    # context '#win' do
-    #   it 'returns true'
-    # end
+    context '#any_empty?' do
+      it 'returns true if all cells are empty' do
+        expect(@board.any_empty?).to be true
+      end
+    end
   end
 end
