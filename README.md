@@ -40,8 +40,8 @@ Mastermind is a 2 player game. One player is the ***Codemaker***, the other is t
   - Orange
   - Black
 - The codebreaker attempts to crack the code by submitting their own four colour code as a prediction.
-- They must choose all of the ***correct colours*** in the ***correct order*** to crack the code ***within 12 turns***.
-- Each turn the codebreaker finds how many ***matches*** their prediction scored. The ***colour*** and the ***position*** must both be correct to count as a match.
+- They must choose all of the ***correct colours*** in the ***correct order*** to crack the code, ***within 12 turns***.
+- Each turn, the codebreaker finds how many ***matches*** their prediction scored. The ***colour*** and the ***position*** must both be correct to count as a match.
 
 
 ###### Objective of the game:
