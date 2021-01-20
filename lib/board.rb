@@ -19,7 +19,7 @@ module Mastermind
     end
 
     def any_empty?
-      code.any? { |color| color.empty? } &&
+      code.any? { |color| color.empty? } ||
       guess.any? { |color| color.empty? }
     end
   end

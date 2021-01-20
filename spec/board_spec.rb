@@ -41,6 +41,12 @@ module Mastermind
       it 'returns true if all cells are empty' do
         expect(@board.any_empty?).to be true
       end
+
+      it 'returns true if one cell is empty' do
+        allow(@board).to receive(:code) { [:blue, :black, :red, :green] }
+        allow(@board).to receive(:guess) { ['', :black, :red, :green] }
+        expect(@board.any_empty?).to be true
+      end
     end
   end
 end
