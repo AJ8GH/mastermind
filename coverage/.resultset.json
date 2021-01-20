@@ -164,16 +164,16 @@
       "/Users/adamjonas/Projects/mastermind/lib/core_extensions.rb": [
         1,
         1,
+        2,
+        null,
+        null,
         1,
+        2,
         null,
         null,
         1,
         1,
-        null,
-        null,
         1,
-        0,
-        0,
         null,
         null,
         1,
@@ -290,6 +290,8 @@
       ],
       "/Users/adamjonas/Projects/mastermind/spec/core_extensions_spec.rb": [
         1,
+        null,
+        null,
         1,
         1,
         1,
@@ -299,6 +301,26 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         null,
         null
@@ -393,6 +415,6 @@
         null
       ]
     },
-    "timestamp": 1611166959
+    "timestamp": 1611167785
   }
 }
