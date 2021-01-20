@@ -8,7 +8,7 @@ module Mastermind
     end
 
     def win?
-      board.guess == board.code
+      !board.any_empy? && board.guess == board.code
     end
   end
 end

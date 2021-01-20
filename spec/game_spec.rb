@@ -12,12 +12,12 @@ module Mastermind
       end
 
       it 'chooses a code_maker at random' do
-        allow_any_instance_of(Array).to receive(:shuffle) { ['Magnus', 'Hikaru']}
+        allow_any_instance_of(Array).to receive(:shuffle) { ['Magnus', 'Hikaru'] }
         expect(Game.new(players).code_maker).to eq 'Magnus'
       end
 
       it 'chooses a code_breaker at random' do
-        allow_any_instance_of(Array).to receive(:shuffle) { ['Magnus', 'Hikaru']}
+        allow_any_instance_of(Array).to receive(:shuffle) { ['Magnus', 'Hikaru'] }
         expect(Game.new(players).code_breaker).to eq 'Hikaru'
       end
     end

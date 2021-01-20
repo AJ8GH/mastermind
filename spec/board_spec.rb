@@ -47,6 +47,12 @@ module Mastermind
         allow(@board).to receive(:guess) { ['', :black, :red, :green] }
         expect(@board.any_empty?).to be true
       end
+
+      it 'returns false if no cells are empty' do
+        allow(@board).to receive(:code) { [:blue, :black, :red, :green] }
+        allow(@board).to receive(:guess) { [:yellow, :black, :red, :green] }
+        expect(@board.any_empty?).to be false
+      end
     end
   end
 end
