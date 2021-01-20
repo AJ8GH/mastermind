@@ -29,5 +29,12 @@ module Mastermind
         expect(@board.code).to eq [:blue, '', '', '']
       end
     end
+
+    context '#guess' do
+      it 'returns the colors in the guess row' do
+        @board.grid[1][2].color = :yellow
+        expect(@board.guess).to eq ['', '', :yellow, '']
+      end
+    end
   end
 end
