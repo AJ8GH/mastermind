@@ -20,7 +20,7 @@ module Mastermind
     end
 
     def show_colors
-      puts ["* blue", "* red", "* black", "* yellow", "* green", "* orange"].map(&:centralize)
+      puts ["* blue ", "* red  ", "* black", "* yellow", "* green", "* orange"].map(&:centralize)
       "Choose 4 colours:".under_over_line
     end
 
@@ -42,6 +42,9 @@ module Mastermind
         get_color
         board.set_cell_color(row: :code, number: number, color: @color)
       end
+    end
+
+    def hide_code
       "Code set!".under_over_line
       "Hit return to hide code".underline
       gets
@@ -58,7 +61,7 @@ module Mastermind
     def play_game
       "#{code_maker}, you are codemaker. Time to set your set your code!".under_over_line
       set_new_code
-
+      hide_code
       12.times do |number|
         "Round #{number + 1}".overline
         "#{code_breaker}, make your prediction:".under_over_line

@@ -61,7 +61,7 @@ module Mastermind
     end
 
     context '#show_colors' do
-      let (:expected) { ["* blue", "* red", "* black", "* yellow", "* green",
+      let (:expected) { ["* blue ", "* red  ", "* black", "* yellow", "* green",
                          "* orange"].map(&:centralize).join("\n") + "\n" + ('-' * 80) + "\n" +
                          "Choose 4 colours:".center(80) + "\n" + ('-' * 80) + "\n" }
 
@@ -86,11 +86,10 @@ module Mastermind
     end
 
     context '#set_new_code' do
-      before (:each) { @game = Game.new(players) }
       let (:input) { ["blue\n", "blue\n", "black\n", "yellow\n"] }
-
       it 'sets the code by updating cell color values in the code row' do
         allow_any_instance_of(Object).to receive(:gets).and_return(*input)
+        @game = Game.new(players)
         @game.set_new_code
         expect(@game.board.code).to eq [:blue, :blue, :black, :yellow]
       end
