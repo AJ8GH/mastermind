@@ -45,12 +45,6 @@ module Mastermind
       end
     end
 
-    context '#ask_for_color' do
-      it 'asks the player to enter a color' do
-        expect(Game.new(players).ask_for_color).to eq colors_list
-      end
-    end
-
     context '#number_of_matches' do
       before(:each) { @game = Game.new(players) }
       it 'counts 2 when there are 2 matches' do
