@@ -67,7 +67,8 @@ module Mastermind
         "#{code_breaker}, make your prediction:".under_over_line
         set_new_guess
         if win?
-          puts "#{code_breaker} wins! They cracked the code in #{number + 1} turns!"; break
+          "#{code_breaker} wins! They cracked the code in #{number + 1} turns!".under_over_line
+          exit
         else
           "Incorrect! Number of matches: #{number_of_matches}".overline
         end
