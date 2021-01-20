@@ -47,13 +47,13 @@ module Mastermind
 
     context '#number_of_matches' do
       before(:each) { @game = Game.new(players) }
-      it 'counts 2 when there are 2 matches' do
+      it 'returns 2 when there are 2 matches' do
         allow(@game.board).to receive(:code) { [:blue, :black, :red, :green] }
         allow(@game.board).to receive(:guess) { [:red, :black, :red, :yellow] }
         expect(@game.number_of_matches).to eq 2
       end
 
-      it 'counts 0 when there are no matches' do
+      it 'returns 0 when there are no matches' do
         allow(@game.board).to receive(:code) { [:yellow, :yellow, :black, :blue] }
         allow(@game.board).to receive(:guess) { [:blue, :black, :red, :yellow] }
         expect(@game.number_of_matches).to eq 0
