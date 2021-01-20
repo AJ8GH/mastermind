@@ -76,12 +76,23 @@ module Mastermind
 
       it 'accepts a valid colour without giving a warning' do
         allow_any_instance_of(Object).to receive(:gets) { good_input }
-        expect { Game.new(players).get_color }.to output('').to_stdout
+        expect(Game.new(players).get_color).to eq :blue
       end
 
       it 'works if user gives a non-valid colour, followed by a valid-one' do
         allow_any_instance_of(Object).to receive(:gets).and_return(*bad_input)
         expect(Game.new(players).get_color).to eq :blue
+      end
+    end
+
+    context '#set_new_code' do
+      before (:each) { @game = Game.new(players) }
+      let (:input) { ["blue\n", "blue\n", "black\n", "yellow\n"] }
+
+      it 'sets the code by updating cell color values in the code row' do
+        allow_any_instance_of(Object).to receive(:gets).and_return(*input)
+        @game.set_new_code
+        expect(@game.board.code).to eq [:blue, :blue, :black, :yellow]
       end
     end
   end
