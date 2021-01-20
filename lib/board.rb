@@ -7,20 +7,25 @@ module Mastermind
     end
 
     def default_grid
-      Array.new(2) { Array.new(4) { Cell.new } }
+      { code:  Array.new(4) { Cell.new },
+        guess: Array.new(4) { Cell.new } }
     end
 
     def code
-      grid[0].map(&:color)
+      grid[:code].map(&:color)
     end
 
     def guess
-      grid[1].map(&:color)
+      grid[:guess].map(&:color)
     end
 
     def any_empty?
       code.any? { |color| color.empty? } ||
       guess.any? { |color| color.empty? }
     end
+
+    # def set_cell_color
+    #   grid
+    # end
   end
 end

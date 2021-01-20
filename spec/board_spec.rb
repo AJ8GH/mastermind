@@ -9,30 +9,31 @@ module Mastermind
       end
 
       it 'has four objects in each row' do
-        expect(@board.grid[0].length).to eq 4
+        expect(@board.grid[:code].length).to eq 4
+        expect(@board.grid[:guess].length).to eq 4
       end
 
-      it 'consitists of cell objects' do
-        expect(@board.grid.all? { |row| row.all? { |cell| cell.class == Cell } }).to be true
+      it 'each row conatins cell objects' do
+        expect(@board.grid.all? { |key, value| value.all? { |cell| cell.class == Cell } }).to be true
       end
     end
 
     context '#grid' do
       it 'returns the grid' do
-        expect(@board.grid.map { |row| row.map(&:color) }).to eq default_grid
+        expect(@board.grid.map { |key, value| value.map(&:color) }).to eq default_grid
       end
     end
 
     context '#code' do
       it 'returns the colors in the code row' do
-        @board.grid[0][0].color = :blue
+        @board.grid[:code][0].color = :blue
         expect(@board.code).to eq [:blue, '', '', '']
       end
     end
 
     context '#guess' do
       it 'returns the colors in the guess row' do
-        @board.grid[1][2].color = :yellow
+        @board.grid[:guess][2].color = :yellow
         expect(@board.guess).to eq ['', '', :yellow, '']
       end
     end
