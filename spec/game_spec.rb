@@ -95,5 +95,15 @@ module Mastermind
         expect(@game.board.code).to eq [:blue, :blue, :black, :yellow]
       end
     end
+
+    context '#set_new_guess' do
+      let (:input) { ["green\n", "red\n", "orange\n", "red\n"] }
+      it 'sets the guess by updating cell colors in the guess row' do
+        allow_any_instance_of(Object).to receive(:gets).and_return(*input)
+        @game = Game.new(players)
+        @game.set_new_guess
+        expect(@game.board.guess).to eq [:green, :red, :orange, :red]
+      end
+    end
   end
 end
