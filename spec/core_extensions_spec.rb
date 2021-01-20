@@ -22,8 +22,9 @@ describe String do
   end
 
   context '#overline' do
-    it '' do
-
+    let(:expected_output) { ("-" * 80) + "\n" + 'a'.center(80) + "\n" }
+    it 'puts line then puts self' do
+      expect { 'a'.overline }.to output(expected_output).to_stdout
     end
   end
 
