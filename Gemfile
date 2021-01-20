@@ -4,3 +4,4 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'rake'
 gem 'rspec'
+gem 'coveralls', require: false
