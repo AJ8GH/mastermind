@@ -19,26 +19,15 @@ module Mastermind
 
     context '#grid' do
       it 'returns the grid' do
-        expect(@board.grid.map { |row| row.map(&:color) }).to eq [['', '', '', ''],
-                                                                  ['', '', '', '']]
+        expect(@board.grid.map { |row| row.map(&:color) }).to eq default_grid
       end
     end
 
-    context '#code_mapper' do
-      it 'creates a hash' do
-        expect(@board.code_mapper.class).to eq Hash
+    context '#code' do
+      it 'returns the colors in the code row' do
+        @board.grid[0][0].color = :blue
+        expect(@board.code).to eq [:blue, '', '', '']
       end
-
-      it 'creates a hash with array rows as value' do
-        expect(@board.code_mapper[:code].class).to eq Array
-      end
-    end
-
-    context '#color_mapper' do
-      it 'maps the cell colors onto an array' do
-        expect(@board.color_mapper).to eq default_grid
-      end
-
     end
   end
 end
