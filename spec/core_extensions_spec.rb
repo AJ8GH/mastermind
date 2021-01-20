@@ -28,9 +28,10 @@ describe String do
     end
   end
 
-  context '#over_under_line' do
-    it '' do
-
+  context '#under_over_line' do
+    let(:expected_output) { ("-" * 80) + "\n" + 'a'.center(80) + "\n" + ("-" * 80) + "\n" }
+    it 'puts line, puts self, then puts line' do
+      expect { 'a'.under_over_line }.to output(expected_output).to_stdout
     end
   end
 end
