@@ -71,12 +71,17 @@ module Mastermind
     end
 
     context '#get_color' do
-      let(:input) { "blue\n" }
-
+      let (:good_input) { "blue\n" }
+      let (:bad_input) { ["bluue\n", "blue\n"] }
 
       it 'accepts a valid colour without giving a warning' do
-        allow_any_instance_of(Object).to receive(:gets) { input }
+        allow_any_instance_of(Object).to receive(:gets) { good_input }
         expect { Game.new(players).get_color }.to output('').to_stdout
+      end
+
+      it 'works if user gives a non-valid colour, followed by a valid-one' do
+        allow_any_instance_of(Object).to receive(:gets).and_return(*bad_input)
+        expect(Game.new(players).get_color).to eq :blue
       end
     end
   end

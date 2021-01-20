@@ -29,7 +29,7 @@ module Mastermind
       while true
         @color = gets.chomp.downcase.to_sym
         if colors.include?(@color)
-          return @colour
+          return @color
         else
           "Please enter a valid colour:".under_over_line
         end
