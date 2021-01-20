@@ -1,6 +1,7 @@
 # Mastermind
+[![Maintainability](https://api.codeclimate.com/v1/badges/59ba167857b8f91cf7f8/maintainability)](https://codeclimate.com/github/AJ8GH/mastermind/maintainability)
 
-[![Maintainability badge](https://api.codeclimate.com/v1/badges/59ba167857b8f91cf7f8/maintainability)](https://codeclimate.com/github/AJ8GH/mastermind/maintainability)
+[![Build Status](https://travis-ci.com/AJ8GH/mastermind.svg?branch=master)](https://travis-ci.com/AJ8GH/mastermind)
 
 
 ## The classic board game - now available directly through your command line!
