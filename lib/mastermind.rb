@@ -24,5 +24,3 @@ def begin_new_game
   new_game = Mastermind::Game.new(@players)
   new_game.play_game
 end
-
-begin_new_game
