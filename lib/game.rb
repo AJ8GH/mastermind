@@ -19,18 +19,34 @@ module Mastermind
       matches
     end
 
+    def show_colors
+      ["* blue", "* red", "* black",
+       "* yellow", "* green", "* orange"].map(&:centralize)
+    end
+
     def get_color
-      puts "Choose a color:\n- blue\n- red\n- black\n- yellow\n-green\n- orange"
-      @color = gets.chomp.to_sym
-      puts "#{@color} selected!"
+      colors = [:blue, :black, :yellow, :red, :green, :orange]
+      while true
+        @color = gets.chomp.downcase.to_sym
+        if colors.include?(@color)
+          return @colour
+        else
+          "Please enter a valid colour:".under_over_line
+        end
+      end
     end
 
     def set_new_code
+      puts show_colors
+      "Choose 4 colours:".under_over_line
       4.times do |number|
         get_color
         board.set_cell_color(row: :code, number: number, color: @color)
       end
-      puts "Code set:\n#{board.code}"
+      "Code set!".under_over_line
+      "Hit return to hide code".underline
+      gets
+      puts "\n" * 100
     end
 
     def set_new_guess
@@ -41,19 +57,20 @@ module Mastermind
     end
 
     def play_game
-      puts "#{code_maker}, you are codemaker, set your code:"
+      "#{code_maker}, you are codemaker. Time to set your set your code!".under_over_line
       set_new_code
 
       12.times do |number|
-        puts "#{code_breaker}, make your prediction:"
+        "Round #{number + 1}".overline
+        "#{code_breaker}, make your prediction:".under_over_line
         set_new_guess
         if win?
           puts "#{code_breaker} wins! They cracked the code in #{number + 1} turns!"; break
         else
-          puts "#{board.guess}\nIncorrect!\nNumber of matches#{number_of_matches}"
+          "Incorrect! Number of matches: #{number_of_matches}".overline
         end
-        "#{code_maker} wins! #{code_breaker} couldn't crack the code!\nThe code was: #{board.code}"
       end
+      "#{code_maker} wins! #{code_breaker} couldn't crack the code!".under_over_line
     end
   end
 end

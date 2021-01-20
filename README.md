@@ -2,14 +2,14 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/59ba167857b8f91cf7f8/maintainability)](https://codeclimate.com/github/AJ8GH/mastermind/maintainability)
 
-#### The classic board game - now available directly through your command line!
+## The classic board game - now available directly through your command line!
 
 ![Mastermind board game](https://i.ebayimg.com/images/g/MNkAAOSwbwlW~qpJ/s-l1600.jpg)
 
 ## Objectives of this project
 - Build a fully functional command line with Ruby
 - Implement thorough unit testing using test driven development
-- Apply core principles of object oriented design
+- Ensure the app is easy to maintain and change in the future, by applying core principles of object oriented design
 
 ## How to play
 
