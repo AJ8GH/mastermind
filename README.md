@@ -21,31 +21,32 @@
 - HTTPS: `https://github.com/AJ8GH/mastermind.git`
 
 #### Navigate to the root folder of the repository:
-- `cd mastermind`(your path will depend on which directory you clone the repository to)
+- `cd mastermind`
 
-#### Begin a new game by running the play_mastermind.rb file through the command line:
+(precise path will depend on which directory you clone the repository to)
+
+#### Begin a new game by running the play_mastermind.rb script through the command line:
 - `ruby play_mastermind.rb`
 
 ## Rules of the game
-Mastermind is a 2 player game. One player will be designated as the Codemaker, the other as the Codebreaker.
+Mastermind is a 2 player game. One player is the ***Codemaker***, the other is the ***Codebreaker***.
 
-- The game chooses a Codemaker and Codebreaker at random from the 2 players.
-- The Codemaker chooses a code of four colours. They are allowed to choose any colours, including duplicates, and in any order.
-- To crack the code, the codebreaker must predict the correct colours AND the correct order.
-- The Codebreaker tries to crack the code by submitting their own four colour code as a prediction.
-- They have 12 turns to crack the code.
-- Each turn the Codebreaker is told how many matches their prediction has. The colour and the position must both be correct to count as a match.
-- There are six possible colours to choose from:
+- The game chooses a codemaker and codebreaker at random from the 2 players.
+- The codemaker ***sets a code*** by choosing any four colours from the following 6 (duplicates are allowed):
   - Blue
   - Red
   - Yellow
   - Green
   - Orange
   - Black
+- The codebreaker attempts to crack the code by submitting their own four colour code as a prediction.
+- They must choose all of the ***correct colours*** in the ***correct order*** to crack the code ***within 12 turns***.
+- Each turn the codebreaker finds ***how many matches*** their prediction scored. The colour and the position ***must both be correct*** to count as a match.
 
-*Objective of the game:*
-- The Codemaker wins if the Codebreaker can't crack the code within 12 turns
-- The Codebreaker wins once they crack the code
+
+###### Objective of the game:
+- The codemaker wins if the codebreaker can't crack the code within 12 turns
+- The codebreaker wins once they crack the code
 
 Checkout the [mastermind wikipedia page](https://en.wikipedia.org/wiki/Mastermind_(board_game)) for more info
 
