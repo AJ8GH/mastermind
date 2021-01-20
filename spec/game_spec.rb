@@ -95,6 +95,16 @@ module Mastermind
       end
     end
 
+    context '#hide_code' do
+      let (:expected_output) { [('-' * 80), "Code set!".center(80), ('-' * 80),
+                                "Hit return to hide code".center(80), ('-' * 80),
+                                ("\n" * 100)].join("\n") }
+      it 'outputs blank space to hide the code from the codebreaker' do
+        allow_any_instance_of(Object).to receive(:gets).and_return("\n")
+        expect { Game.new(players).hide_code }.to output(expected_output).to_stdout
+      end
+    end
+
     context '#set_new_guess' do
       let (:input) { ["green\n", "red\n", "orange\n", "red\n"] }
       it 'sets the guess by updating cell colors in the guess row' do
