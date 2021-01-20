@@ -69,5 +69,15 @@ module Mastermind
         expect { Game.new(players).show_colors }.to output(expected).to_stdout
       end
     end
+
+    context '#get_color' do
+      let(:input) { "blue\n" }
+
+
+      it 'accepts a valid colour without giving a warning' do
+        allow_any_instance_of(Object).to receive(:gets) { input }
+        expect { Game.new(players).get_color }.to output('').to_stdout
+      end
+    end
   end
 end

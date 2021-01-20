@@ -34,7 +34,7 @@
         1,
         1,
         1,
-        21,
+        23,
         null,
         null,
         null
@@ -44,7 +44,7 @@
         1,
         1,
         1,
-        169,
+        177,
         null,
         null,
         null
@@ -55,12 +55,12 @@
         1,
         null,
         1,
-        21,
+        22,
         null,
         null,
         1,
-        105,
-        84,
+        110,
+        88,
         null,
         null,
         1,
@@ -88,9 +88,9 @@
         1,
         1,
         1,
-        10,
-        10,
-        10,
+        11,
+        11,
+        11,
         null,
         null,
         1,
@@ -111,11 +111,11 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         0,
         null,
@@ -329,7 +329,7 @@
       "/Users/adamjonas/Projects/mastermind/spec/game_spec.rb": [
         1,
         1,
-        11,
+        12,
         1,
         null,
         1,
@@ -399,6 +399,16 @@
         null,
         null,
         null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/adamjonas/Projects/mastermind/spec/player_spec.rb": [
@@ -426,6 +436,6 @@
         null
       ]
     },
-    "timestamp": 1611169180
+    "timestamp": 1611169567
   }
 }
