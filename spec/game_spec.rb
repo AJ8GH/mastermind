@@ -37,6 +37,12 @@ module Mastermind
         allow(@game.board).to receive(:guess) { [:blue, :red, :red, :green] }
         expect(@game.win?).to be false
       end
+
+      it 'returns false when the board is all empty' do
+        expect(@game.board.code).to eq ['', '', '', '']
+        expect(@game.board.guess).to eq ['', '', '', '']
+        expect(@game.win?).to be false
+      end
     end
   end
 end
