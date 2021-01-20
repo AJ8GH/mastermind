@@ -1,6 +1,7 @@
 module Mastermind
   describe Game do
     let(:players) { [Player.new('Magnus'), Player.new('Hikaru')] }
+    let(:colors_list) { "Enter a color:\n- blue\n- red\n- black\n- yellow\n-green\n- orange" }
 
     context '#initialize' do
       it 'creates a new game with 2 players' do
@@ -41,6 +42,12 @@ module Mastermind
         expect(@game.board.code).to eq ['', '', '', '']
         expect(@game.board.guess).to eq ['', '', '', '']
         expect(@game.win?).to be false
+      end
+    end
+
+    context '#ask_for_color' do
+      it 'asks the player to enter a color' do
+        expect(Game.new(players).ask_for_color).to eq colors_list
       end
     end
   end
